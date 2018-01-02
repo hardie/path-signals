@@ -56,7 +56,6 @@ to network elements along the path between them.  It is common
 for certain network elements to treat the exchanged messages
 as signals which relate to their own functions.
 
-
 A firewall may, for example, create a rule that allows traffic from a
 specific host and port to enter its network when the connection was
 initiated by a host already within the network.  It may subsequently
