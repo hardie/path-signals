@@ -102,7 +102,7 @@ related to the session.
 ### Session Identity
 
 Path elements that track session establishment will typically create a
-session identify for the flow, commonly using a tuple of the visible
+session identity for the flow, commonly using a tuple of the visible
 information in the packet headers.  This is then used to associate
 other information with the
 
