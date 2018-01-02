@@ -61,7 +61,7 @@ specific host and port to enter its network when the connection was
 initiated by a host already within the network.  It may subsequently
 remove that rule when the communication has ceased.  In the context of
 TCP handshake, it sets up the pinhole rule on seeing the initial TCP
-SYN acknowledged and then removes it upon seeing a RST or FIN & ACK
+SYN acknowledgement and then removes it upon seeing a RST or FIN & ACK
 exchange.  Note that in this case it does nothing to re-write any
 portion of the TCP packet; it simply enables a return path that would
 otherwise have been blocked.
