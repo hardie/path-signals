@@ -1,6 +1,5 @@
 ---
-title: "Path signals"
-abbrev: pathsignals
+title: "Path Signals"
 docname: draft-hardie-path-signals-latest
 category: info
 ipr: trust200902
@@ -89,7 +88,7 @@ these are derived from inferenece, they do not include any path
 signals which would not be relevant to the end point state machines;
 indeed, an inference-based system cannot send such signals.
 
-## Session establishment
+## Session Establishment
 
 One of the most basic inferences made by examination of transport
 state is that a packet will be part of an ongoing flow; that is, an
@@ -97,7 +96,7 @@ established session will continue until messages are received that
 terminate it.  Path elements may then make subsidiary inferences
 related to the session.
 
-### Session identity
+### Session Identity
 
 Path elements that track session establishment will typically create a
 session identify for the flow, commonly using a tuple of the visible
@@ -137,7 +136,7 @@ timer.  These measurements are necessarily limited to measuring only
 the portion of the path between the system which assigned the
 timestamp or sequence number and the network element.
 
-### Path reliability and consistency
+### Path Reliability and Consistency
 
 A network element may also measure the reliability of a particular
 path by examining sessions which expose sequence numbers;
@@ -151,7 +150,7 @@ different things.  Though it comes to a preliminary conclusion, this
 draft intends to foster a discussion of those tradeoffs and any
 discussion of them must be understood as preliminary.
 
-## Do not restore these signals
+## Do Not Restore These Signals
 
 It is possible, of course, to do nothing.  The transport messages were
 not necessarily intended for consumption by on-path network elements
@@ -168,7 +167,7 @@ load blancers or other systems to continue to maintain a flow's path
 to the appropriate peer.
 
 
-## Replace these with network layer signals
+## Replace These With Network Layer Signals
 
 It would be possible to replace these implicit signals with explicit
 signals at the network layer.  Though IPv4 has relatively few
@@ -176,7 +175,7 @@ facilities for this, IPv6 hop-by-hop headers {{RFC7045}} might suit
 this purpose.  Further examination of the deployability of these
 headers may be required.
 
-## Replace these with per-transport signals
+## Replace These With Per-Transport Signals
 
 It is possible to replace these implicit signals with signals that are
 tailored to specific transports, just as the initial signals are
@@ -187,7 +186,7 @@ firewalls better than other traffic.  If done with an explicit intent
 to re-use the elements of the solution in other transports, the risk
 of ossification might be slightly lower.
 
-## Create a set of signals common to multiple transports
+## Create a Set of Signals Common to Multiple Transports
 
 Several proposals use UDP{{RFC0768}} as a demux layer, onto which new
 transport semantics are layered.  For those transports, it may be
