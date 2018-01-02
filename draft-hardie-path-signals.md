@@ -87,7 +87,7 @@ times.
 This
 list is not exhaustive, and it is not the full set of effects due to
 encrypting data and metadata in flight.  Note as well that because
-these are derived from inferenece, they do not include any path
+these are derived from inference, they do not include any path
 signals which would not be relevant to the end point state machines;
 indeed, an inference-based system cannot send such signals.
 
