@@ -23,8 +23,6 @@ informative:
    RFC7045:
    RFC0768:
    RFC8164:
-   I-D.trammell-plus-statefulness:
-   I-D.ietf-quic-transport:
 
 
 --- abstract
@@ -165,7 +163,7 @@ for flows of this type are generally not kept as long as those for
 which sessions are identifiable.  The result is that heartbeat traffic
 must be maintained to keep any bindings (e.g. NAT or firewall) from
 early expiry. When those bindings are not kept, methods like QUIC's
-connection-id {{I-D.ietf-quic-transport}} may be necessary to allow
+connection-id {{?QUIC=I-D.ietf-quic-transport}} may be necessary to allow
 load blancers or other systems to continue to maintain a flow's path
 to the appropriate peer.
 
@@ -191,11 +189,11 @@ of ossification might be slightly lower.
 
 ## Create a Set of Signals Common to Multiple Transports
 
-Several proposals use UDP{{RFC0768}} as a demux layer, onto which new
+Several proposals use UDP {{RFC0768}} as a demux layer, onto which new
 transport semantics are layered.  For those transports, it may be
 possible to build a common signalling mechanism and set of signals,
 such as that proposed in "Transport-Independent Path Layer State
-Management" {{I-D.trammell-plus-statefulness}}.
+Management" {{?PLUS=I-D.trammell-plus-statefulness}}.
 
 This may be taken as a variant of the re-use of common elements
 mentioned in the section above, but it has a greater chance of
