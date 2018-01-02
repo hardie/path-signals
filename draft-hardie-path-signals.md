@@ -52,9 +52,9 @@ document are to be interpreted as described in RFC 2119 {{RFC2119}}.
 TCP {{RFC0793}} uses handshake messages to establish, maintain, and
 close connections.  While these are primarily intended to create state
 between two communicating nodes, these handshake messages are visible
-to network elements along the path between them.  It has been common
-over time for certain network elements to treat the exchanged messages
-as signals which related to their own functions.
+to network elements along the path between them.  It is common
+for certain network elements to treat the exchanged messages
+as signals which relate to their own functions.
 
 
 A firewall may, for example, create a rule that allows traffic from a
