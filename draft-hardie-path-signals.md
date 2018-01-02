@@ -1,7 +1,7 @@
 ﻿---
 title: "Path signals"
 abbrev: pathsignals
-docname: draft-hardie-path-signals-02
+docname: draft-hardie-path-signals-latest
 category: info
 ipr: trust200902
 stand_alone: yes
@@ -56,6 +56,7 @@ between two communicating nodes, these handshake messages are visible
 to network elements along the path between them.  It has been common
 over time for certain network elements to treat the exchanged messages
 as signals which related to their own functions.
+
 
 A firewall may, for example, create a rule that allows traffic from a
 specific host and port to enter its network when the connection was
