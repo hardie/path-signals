@@ -104,7 +104,7 @@ related to the session.
 Path elements that track session establishment will typically create a
 session identity for the flow, commonly using a tuple of the visible
 information in the packet headers.  This is then used to associate
-other information with the
+other information with the flow.
 
 ### Routability and Consent
 
