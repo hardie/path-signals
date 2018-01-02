@@ -21,12 +21,6 @@ subject to a Simplified BSD License) in Contributions.
 ## Other Resources
 
 Discussion of this work occurs on the
-[path working group mailing list](https://mailarchive.ietf.org/arch/browse/path/)
-([subscribe](https://www.ietf.org/mailman/listinfo/path)).  In addition to
+[stackevo list](https://mailarchive.i.org/arch/browse/stackevo-discuss/)
+([subscribe](https://www.iab.org/mailman/listinfo/stackevo-discuss)).  In addition to
 contributions in github, you are encouraged to participate in discussions there.
-
-**Note**: Some working groups adopt a policy whereby substantive discussion of
-technical issues needs to occur on the mailing list.
-
-You might also like to familiarize yourself with other
-[working group documents](https://datatracker.ietf.org/wg/path/documents/).
