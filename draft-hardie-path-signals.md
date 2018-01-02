@@ -76,11 +76,15 @@ administrator, and by the security posture of the network as a whole.
 
 The following list of signals which may be inferred from transport
 state messages includes those which may be exchanged during sessions
-establishment and those which derive from the ongoing flow.  Some of
-these signals are derived from the direct examination of packet
-trains, such as using a sequence number gap pattern to infer network
-reliability; others are derived from association, such as inferring
-network latency by timing a flow's packet inter-arrival times.  This
+establishment and those which derive from the ongoing flow.
+
+Some of these signals are derived from the direct examination of
+packet trains, such as using a sequence number gap pattern to infer
+network reliability; others are derived from association, such as
+inferring network latency by timing a flow's packet inter-arrival
+times.
+
+This
 list is not exhaustive, and it is not the full set of effects due to
 encrypting data and metadata in flight.  Note as well that because
 these are derived from inferenece, they do not include any path
