@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Path signals"
 abbrev: pathsignals
 docname: draft-hardie-path-signals-latest
@@ -10,8 +10,8 @@ pi: [toc, sortrefs, symrefs]
 author:
 -
    ins: T. Hardie
-   name: Ted Hardie 
-   role: editor 
+   name: Ted Hardie
+   role: editor
    email: ted.ietf@gmail.com
 
 normative:
@@ -26,8 +26,8 @@ informative:
    RFC8164:
    I-D.trammell-plus-statefulness:
    I-D.ietf-quic-transport:
-   
-   
+
+
 --- abstract
 
 TCP's state mechanics uses a series of well-known messages that are
@@ -135,7 +135,7 @@ latency using transport messages, but two common ones are examining
 exposed timestamps and associating sequence numbers with a local
 timer.  These measurements are necessarily limited to measuring only
 the portion of the path between the system which assigned the
-timestamp or sequence number and the network element. 
+timestamp or sequence number and the network element.
 
 ### Path reliability and consistency
 
