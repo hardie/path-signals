@@ -66,9 +66,9 @@ exchange.  Note that in this case it does nothing to re-write any
 portion of the TCP packet; it simply enables a return path that would
 otherwise have been blocked.
 
-When a transport encrypts the headers it uses for state mechanics, the
-signal path elements inferred from examination is no longer available.
-Their behavior in its absence will depend on which signal is not
+When a transport encrypts the fields it uses for state mechanics,
+these signals are no longer accessible to path elements.
+The behavior of path elements will then depend on which signal is not
 available, on the default behavior configured by the path element
 administrator, and by the security posture of the network as a whole.
 
