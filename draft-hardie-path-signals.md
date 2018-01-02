@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Path signals"
 abbrev: pathsignals
 docname: draft-hardie-path-signals-latest
