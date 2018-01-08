@@ -1,6 +1,5 @@
 ---
-title: "Path signals"
-abbrev: pathsignals
+title: "Path Signals"
 docname: draft-hardie-path-signals-latest
 category: info
 ipr: trust200902
@@ -24,8 +23,6 @@ informative:
    RFC7045:
    RFC0768:
    RFC8164:
-   I-D.trammell-plus-statefulness:
-   I-D.ietf-quic-transport:
 
 
 --- abstract
@@ -53,24 +50,23 @@ document are to be interpreted as described in RFC 2119 {{RFC2119}}.
 TCP {{RFC0793}} uses handshake messages to establish, maintain, and
 close connections.  While these are primarily intended to create state
 between two communicating nodes, these handshake messages are visible
-to network elements along the path between them.  It has been common
-over time for certain network elements to treat the exchanged messages
-as signals which related to their own functions.
-
+to network elements along the path between them.  It is common
+for certain network elements to treat the exchanged messages
+as signals which relate to their own functions.
 
 A firewall may, for example, create a rule that allows traffic from a
 specific host and port to enter its network when the connection was
 initiated by a host already within the network.  It may subsequently
 remove that rule when the communication has ceased.  In the context of
 TCP handshake, it sets up the pinhole rule on seeing the initial TCP
-SYN acknowledged and then removes it upon seeing a RST or FIN & ACK
+SYN acknowledgement and then removes it upon seeing a RST or FIN & ACK
 exchange.  Note that in this case it does nothing to re-write any
 portion of the TCP packet; it simply enables a return path that would
 otherwise have been blocked.
 
-When a transport encrypts the headers it uses for state mechanics, the
-signal path elements inferred from examination is no longer available.
-Their behavior in its absence will depend on which signal is not
+When a transport encrypts the fields it uses for state mechanics,
+these signals are no longer accessible to path elements.
+The behavior of path elements will then depend on which signal is not
 available, on the default behavior configured by the path element
 administrator, and by the security posture of the network as a whole.
 
@@ -78,18 +74,22 @@ administrator, and by the security posture of the network as a whole.
 
 The following list of signals which may be inferred from transport
 state messages includes those which may be exchanged during sessions
-establishment and those which derive from the ongoing flow.  Some of
-these signals are derived from the direct examination of packet
-trains, such as using a sequence number gap pattern to infer network
-reliability; others are derived from association, such as inferring
-network latency by timing a flow's packet inter-arrival times.  This
+establishment and those which derive from the ongoing flow.
+
+Some of these signals are derived from the direct examination of
+packet trains, such as using a sequence number gap pattern to infer
+network reliability; others are derived from association, such as
+inferring network latency by timing a flow's packet inter-arrival
+times.
+
+This
 list is not exhaustive, and it is not the full set of effects due to
 encrypting data and metadata in flight.  Note as well that because
-these are derived from inferenece, they do not include any path
+these are derived from inference, they do not include any path
 signals which would not be relevant to the end point state machines;
 indeed, an inference-based system cannot send such signals.
 
-## Session establishment
+## Session Establishment
 
 One of the most basic inferences made by examination of transport
 state is that a packet will be part of an ongoing flow; that is, an
@@ -97,12 +97,12 @@ established session will continue until messages are received that
 terminate it.  Path elements may then make subsidiary inferences
 related to the session.
 
-### Session identity
+### Session Identity
 
 Path elements that track session establishment will typically create a
-session identify for the flow, commonly using a tuple of the visible
+session identity for the flow, commonly using a tuple of the visible
 information in the packet headers.  This is then used to associate
-other information with the
+other information with the flow.
 
 ### Routability and Consent
 
@@ -137,7 +137,7 @@ timer.  These measurements are necessarily limited to measuring only
 the portion of the path between the system which assigned the
 timestamp or sequence number and the network element.
 
-### Path reliability and consistency
+### Path Reliability and Consistency
 
 A network element may also measure the reliability of a particular
 path by examining sessions which expose sequence numbers;
@@ -151,7 +151,7 @@ different things.  Though it comes to a preliminary conclusion, this
 draft intends to foster a discussion of those tradeoffs and any
 discussion of them must be understood as preliminary.
 
-## Do not restore these signals
+## Do Not Restore These Signals
 
 It is possible, of course, to do nothing.  The transport messages were
 not necessarily intended for consumption by on-path network elements
@@ -163,12 +163,12 @@ for flows of this type are generally not kept as long as those for
 which sessions are identifiable.  The result is that heartbeat traffic
 must be maintained to keep any bindings (e.g. NAT or firewall) from
 early expiry. When those bindings are not kept, methods like QUIC's
-connection-id {{I-D.ietf-quic-transport}} may be necessary to allow
+connection-id {{?QUIC=I-D.ietf-quic-transport}} may be necessary to allow
 load blancers or other systems to continue to maintain a flow's path
 to the appropriate peer.
 
 
-## Replace these with network layer signals
+## Replace These With Network Layer Signals
 
 It would be possible to replace these implicit signals with explicit
 signals at the network layer.  Though IPv4 has relatively few
@@ -176,7 +176,7 @@ facilities for this, IPv6 hop-by-hop headers {{RFC7045}} might suit
 this purpose.  Further examination of the deployability of these
 headers may be required.
 
-## Replace these with per-transport signals
+## Replace These With Per-Transport Signals
 
 It is possible to replace these implicit signals with signals that are
 tailored to specific transports, just as the initial signals are
@@ -187,13 +187,13 @@ firewalls better than other traffic.  If done with an explicit intent
 to re-use the elements of the solution in other transports, the risk
 of ossification might be slightly lower.
 
-## Create a set of signals common to multiple transports
+## Create a Set of Signals Common to Multiple Transports
 
-Several proposals use UDP{{RFC0768}} as a demux layer, onto which new
+Several proposals use UDP {{RFC0768}} as a demux layer, onto which new
 transport semantics are layered.  For those transports, it may be
 possible to build a common signalling mechanism and set of signals,
 such as that proposed in "Transport-Independent Path Layer State
-Management" {{I-D.trammell-plus-statefulness}}.
+Management" {{?PLUS=I-D.trammell-plus-statefulness}}.
 
 This may be taken as a variant of the re-use of common elements
 mentioned in the section above, but it has a greater chance of
