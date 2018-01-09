@@ -254,9 +254,11 @@ Addition of visible signals to the path also increases the information
 available to an observer and may, when the information can be linked
 to a node or user, reduce the privacy of the user.
 
-Defining explicit path signals that are decoupled from the signals
-used to drive the state machinery at end systems means that it is
-possible for those signals to be falsified by endpoints.
+When signals from end points to the path are independent from the
+signals used by endpoints to manage the flow's state mechanics, they
+may be falsified by an endpoint without affecting the peer's
+understanding of the flow's state. For encrypted flows, this
+divergence is not detectable by on-path devices.
 
 
 # Acknowledgements
