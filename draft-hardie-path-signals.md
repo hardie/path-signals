@@ -210,8 +210,24 @@ the network elements on the path.  For many flows, that may result in
 signal being absent, but it allows them to be present when needed.
 
 Discussion of the appropriate mechanism(s) for these signals is
-continuing but, at minimum, any method should meet the principles set
-out in the security considerations below.
+continuing but, at minimum, any method should aim to adhere to these
+basic principles:
+
+* The portion of protocol signaling that is intended for end system
+  state machines should be protected by confidentiality and integrity
+  protection such that it is only available to those end systems.
+
+* Anything exposed to the path should be done with the intent that it
+  be used by the network elements on the path.  This information
+  should be integrity protected.
+
+* Signals exposed to the path should be decoupled from signals that
+  drive the protocol state machines in endpoints.  This avoids
+  creating opportunities for additional inference.
+
+* Intermediate path elements should not add visible signals which
+  identify the user, origin node, or origin network {{RFC8164}}.
+
 
 # IANA Considerations
 
@@ -238,17 +254,12 @@ Addition of visible signals to the path also increases the information
 available to an observer and may, when the information can be linked
 to a node or user, reduce the privacy of the user.
 
-This document recommends three basic principles:
+When signals from end points to the path are independent from the
+signals used by endpoints to manage the flow's state mechanics, they
+may be falsified by an endpoint without affecting the peer's
+understanding of the flow's state. For encrypted flows, this
+divergence is not detectable by on-path devices.
 
-* Cryptographic contexts should be available on any flow, derived from
-  ubiquitous end-system cryptographic capabilities. That context should
-  cover the portion of protocol signaling that is inteded for end system
-  state machines.
-* Anything exposed to the path should be done with the intent that it
-  be used by the network elements on the path.
-* Intermediate path elements should not add visible signals which
-  identify the user, origin node, or origin network
-  {{RFC8164}}.
 
 # Acknowledgements
 
