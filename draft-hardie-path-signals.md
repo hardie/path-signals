@@ -164,7 +164,7 @@ which sessions are identifiable.  The result is that heartbeat traffic
 must be maintained to keep any bindings (e.g. NAT or firewall) from
 early expiry. When those bindings are not kept, methods like QUIC's
 connection-id {{?QUIC=I-D.ietf-quic-transport}} may be necessary to allow
-load blancers or other systems to continue to maintain a flow's path
+load balancers or other systems to continue to maintain a flow's path
 to the appropriate peer.
 
 
