@@ -27,15 +27,7 @@ informative:
 
 --- abstract
 
-TCP's state mechanics uses a series of well-known messages that are
-exchanged in the clear.  Because these are visible to network elements
-on the path between the two nodes setting up the transport connection,
-they are often used as signals by those network elements.  In
-transports that do not exchange these messages in the clear, on-path
-network elements lack those signals.  This document discusses the
-nature of the signals as they are seen by on-path elements and
-reflects on best practices for transports which encrypt their state
-mechanics.
+This document discusses the nature of the signals as they are seen by on-path elements, contrasting implicit and explicit signals. For example, TCP's state mechanics uses a series of well-known messages that are exchanged in the clear.  Because these are visible to network elements on the path between the two nodes setting up the transport connection, they are often used as signals by those network elements.  In transports that do not exchange these messages in the clear, on-path network elements lack those signals.  The use of explicit signals is recommended for transports which encrypt their state mechanics but a signal should only be exposed to the path only when the signal's originator intends that it be used by the network elements on the path.
 
 --- middle
 
@@ -69,6 +61,8 @@ these signals are no longer accessible to path elements.
 The behavior of path elements will then depend on which signal is not
 available, on the default behavior configured by the path element
 administrator, and by the security posture of the network as a whole.
+
+This document discusses the nature of the signals as they are seen by on-path elements, contrasting implicit and explicit signals. The use of explicit signals is recommended for transports which encrypt their state mechanics but a signal should only be exposed to the path only when the signal's originator intends that it be used by the network elements on the path.
 
 # Signals Type Inferred
 
@@ -164,7 +158,7 @@ which sessions are identifiable.  The result is that heartbeat traffic
 must be maintained to keep any bindings (e.g. NAT or firewall) from
 early expiry. When those bindings are not kept, methods like QUIC's
 connection-id {{?QUIC=I-D.ietf-quic-transport}} may be necessary to allow
-load balancers or other systems to continue to maintain a flow's path
+load blancers or other systems to continue to maintain a flow's path
 to the appropriate peer.
 
 
