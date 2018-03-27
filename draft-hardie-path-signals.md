@@ -106,7 +106,7 @@ other information with the flow.
 
 ### Routability and Consent
 
-A second common inference is that the session establishment provides
+A second common inference that session establishment provides
 is that the communicating pair of hosts can each reach each other and
 are interested in continuing communication.  The firewall example
 given above is a consequence of the inference of consent; because the
@@ -124,7 +124,7 @@ result in reservation of radio air time, energy, or network capacity.
 
 ## Network Measurement
 
-Some network elements will also use transport messages to engage in
+Some network elements will also observe transport messages to engage in
 measurement of the paths which are used by flows on their network.
 The list of measurements below is illustrative, not exhaustive.
 
@@ -264,7 +264,7 @@ divergence is not detectable by on-path devices.
 # Acknowledgements
 
 In addition to the editor listed above, this document incorporates
-contributions from Brian Trammel, Mirja Kuehlwind, and Joe Hildebrand.
+contributions from Brian Trammell, Mirja Kuehlwind, and Joe Hildebrand.
 These ideas were also discussed at the PLUS BoF, sponsored by Spencer
 Dawkins.  The ideas around the use of IPv6 hop-by-hop headers as a
 network layer signal benefited from discussions with Tom Herbert.  The
