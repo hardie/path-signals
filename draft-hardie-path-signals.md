@@ -27,15 +27,7 @@ informative:
 
 --- abstract
 
-TCP's state mechanics uses a series of well-known messages that are
-exchanged in the clear.  Because these are visible to network elements
-on the path between the two nodes setting up the transport connection,
-they are often used as signals by those network elements.  In
-transports that do not exchange these messages in the clear, on-path
-network elements lack those signals.  This document discusses the
-nature of the signals as they are seen by on-path elements and
-reflects on best practices for transports which encrypt their state
-mechanics.
+This document discusses the nature of signals seen by on-path elements, contrasting implicit and explicit signals. For example, TCP's state mechanics uses a series of well-known messages that are exchanged in the clear.  Because these are visible to network elements on the path between the two nodes setting up the transport connection, they are often used as signals by those network elements.  In transports that do not exchange these messages in the clear, on-path network elements lack those signals.  This document recommends that explict signals be used by transports which encrypt their state mechanics. It also recommends that a signal be exposed to the path only when the signal's originator intends that it be used by the network elements on the path.
 
 --- middle
 
@@ -47,12 +39,10 @@ document are to be interpreted as described in RFC 2119 {{RFC2119}}.
 
 # Introduction
 
-TCP {{RFC0793}} uses handshake messages to establish, maintain, and
-close connections.  While these are primarily intended to create state
-between two communicating nodes, these handshake messages are visible
-to network elements along the path between them.  It is common
-for certain network elements to treat the exchanged messages
-as signals which relate to their own functions.
+This document discusses the nature of signals seen by on-path elements, contrasting implicit and explicit signals. For example, TCP's state mechanics uses a series of well-known messages that are exchanged in the clear.  Because these are visible to network elements on the path between the two nodes setting up the transport connection, they are often used as signals by those network elements.  In transports that do not exchange these messages in the clear, on-path network elements lack those signals.  This document recommends that explict signals be used by transports which encrypt their state mechanics. It also recommends that a signal be exposed to the path only when the signal's originator intends that it be used by the network elements on the path.
+
+The interpretation of TCP {{RFC0793}} by on-path elements is an exmple of implicit signal usage.  It uses cleartext handshake messages to establish, maintain, and close connections.  While these are primarily intended to create state between two communicating nodes, these handshake messages are visible to network elements along the path between them.  It is common
+for certain network elements to treat the exchanged messages as signals which relate to their own functions.
 
 A firewall may, for example, create a rule that allows traffic from a
 specific host and port to enter its network when the connection was
@@ -69,6 +59,8 @@ these signals are no longer accessible to path elements.
 The behavior of path elements will then depend on which signal is not
 available, on the default behavior configured by the path element
 administrator, and by the security posture of the network as a whole.
+
+
 
 # Signals Type Inferred
 
@@ -264,9 +256,11 @@ divergence is not detectable by on-path devices.
 # Acknowledgements
 
 In addition to the editor listed above, this document incorporates
-contributions from Brian Trammell, Mirja Kuehlwind, and Joe Hildebrand.
-These ideas were also discussed at the PLUS BoF, sponsored by Spencer
-Dawkins.  The ideas around the use of IPv6 hop-by-hop headers as a
+contributions from Brian Trammell, Mirja Kuehlwind, Martin Thomson, Aaron Falk,
+and Joe Hildebrand. These ideas were also discussed at the PLUS BoF, sponsored 
+contributions from Brian Trammell, Mirja Kuehlwind, Martin Thomson, Aaron Falk
+and Joe Hildebrand. These ideas were also discussed at the PLUS BoF, sponsored 
+by Spencer Dawkins.  The ideas around the use of IPv6 hop-by-hop headers as a
 network layer signal benefited from discussions with Tom Herbert.  The
 description of UDP as a demuxing protocol comes from Stuart Cheshire.
 
