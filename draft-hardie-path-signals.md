@@ -105,6 +105,20 @@ given above is a consequence of the inference of consent; because the
 internal host initiates the connection, it is presumed to consent to
 return traffic.  That, in turn justifies the pinhole.
 
+Some other on-path elements ( assume that a host which asked to
+communicate with a remote address consents to establish incoming
+communications from any other host (Endpoint-Independent Mapping/
+Endpoint-Independent Filtering). This is, for example, the default
+behavior in NAT64.
+
+###Flow Stability
+
+Some on-path devices that are responsible for load-sharing or load-
+balancing may be instructed to preserve the same path for a given flow,
+rather than dispatching packets belonging to the some flow on multiple
+paths as this may cause packets in the flow to be delivered out of order.. 
+
+
 ### Resource Requirements
 
 An additional common inference is that network resources will be
