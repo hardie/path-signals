@@ -271,7 +271,7 @@ divergence is not detectable by on-path devices.
 
 In addition to the editor listed above, this document incorporates
 contributions from Brian Trammell, Mirja Kuehlwind, Martin Thomson, Aaron Falk,
-and Joe Hildebrand. These ideas were also discussed at the PLUS BoF, sponsored 
+Mohamed Boucadair and Joe Hildebrand. These ideas were also discussed at the PLUS BoF, sponsored 
 contributions from Brian Trammell, Mirja Kuehlwind, Martin Thomson, Aaron Falk
 and Joe Hildebrand. These ideas were also discussed at the PLUS BoF, sponsored 
 by Spencer Dawkins.  The ideas around the use of IPv6 hop-by-hop headers as a
