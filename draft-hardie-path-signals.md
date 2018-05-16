@@ -111,7 +111,7 @@ communications from any other host (Endpoint-Independent Mapping/
 Endpoint-Independent Filtering). This is, for example, the default
 behavior in NAT64.
 
-###Flow Stability
+### Flow Stability
 
 Some on-path devices that are responsible for load-sharing or load-
 balancing may be instructed to preserve the same path for a given flow,
