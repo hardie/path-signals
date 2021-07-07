@@ -210,22 +210,27 @@ protocol.
 # Recommendation
 
 Fundamentally, this paper recommends that implicit signals should be
-replaced with explicit signals, but that a signal should be exposed to
+replaced with explicit signals, and that a signal should be exposed to
 the path only when the signal's originator intends that it be used by
-the network elements on the path.  For many flows, that may result in
-signal being absent, but it allows them to be present when needed.
+the network elements on the path. These explicit signals should be designed
+for consumption of path elements and only expose the minimal information
+needed for the supported use case. For many flows, that may result in
+signal being absent under normal operation, but it may allows them 
+to be present when needed based on the end system's control of the signal 
+exposure.
 
 Discussion of the appropriate mechanism(s) for these signals is
 continuing but, at minimum, any method should aim to adhere to these
 basic principles:
 
 * The portion of protocol signaling that is intended for end system
-  state machines should be protected by confidentiality and integrity
-  protection such that it is only available to those end systems.
+  state machines should be cryptographically protected for confidentiality
+  such that it is only available to those end systems.
 
-* Anything exposed to the path should be done with the intent that it
-  be used by the network elements on the path.  This information
-  should be integrity protected.
+* Anything exposed to the path should be designed under the assumption that
+  may be consumed by the network elements on the path.  This information 
+  should be integrity protected to detect modifications on the path which 
+  can inform the end system's exposure decision. 
 
 * Signals exposed to the path should be decoupled from signals that
   drive the protocol state machines in endpoints.  This avoids
